@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Moving Cube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gun"></div>
+    <div class="scoreboard">
+        Score: <span id="score">0</span> | Escaped: <span id="escaped">0</span>
+    </div>
+    <div class="health-bar-container">
+        <div id="health-bar" class="health-bar"></div>
+    </div>
+    <div id="game-over-screen" class="game-over-screen">
+        <div class="game-over-text">
+            <p>Your Score: <span id="final-score"></span></p>
+        </div>
+        <button id="restart-button">Play Again</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
