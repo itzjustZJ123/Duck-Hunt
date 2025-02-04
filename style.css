@@ -1,0 +1,161 @@
+/* Reset margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background-image: url('bg.PNG');
+    background-size: cover;
+    background-position: center 70%;
+    cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"%3E%3Ctext x="2" y="50" font-size="48" fill="black"%3E𖥠%3C/text%3E%3C/svg%3E') 32 32, auto;
+}
+
+/* Title text */
+h1 {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    z-index: 10;
+    font-family: 'Impact', sans-serif;
+    font-size: 50px;
+    color: #e60000; /* Bright red for intensity */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.8); /* Shadow for depth */
+}
+
+/* Gun style */
+.gun {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('gun.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100; /* Ensure it's on top of everything else */
+}
+
+/* Duck image with toned down effect */
+.duck {
+    position: absolute;
+    width: 200px; /* Original size */
+    height: 200px; /* Original size */
+    background-image: url('duck.gif');
+    background-size: cover;
+    background-position: center;
+    clip-path: inset(10% 15% 20% 15%);
+    opacity: 1; /* Full opacity */
+    filter: none; /* No grayscale, blur, or contrast */
+}
+
+/* Dog gif popping up */
+.dog-gif {
+  position: absolute;
+  width: 200px; /* Larger size */
+  height: auto;
+  animation: pop-up 0.5s ease forwards, pop-down 0.5s ease 2.5s forwards;
+}
+
+@keyframes pop-up {
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+}
+
+@keyframes pop-down {
+    from {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+}
+
+/* Scoreboard styling */
+.scoreboard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #e0e0e0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for more intense look */
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Impact', sans-serif;
+    border: 2px solid #8b0000; /* Blood red border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Death screen overlay with darker, ominous feel */
+.game-over-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('end.gif');
+    background-size: cover;
+    display: none;
+    background-position: center 10%;
+    z-index: 100;
+}
+
+.game-over-text {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #e0e0e0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 32px; /* Adjusted padding to match the restart button */
+    border-radius: 8px;
+    font-family: 'Impact', sans-serif;
+    border: 2px solid #8b0000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box; /* Ensures padding and border are inside the element height */
+}
+
+/* Restart button style */
+#restart-button {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #8b0000;
+    color: #e0e0e0;
+    padding: 15px 32px; /* Same padding as game-over-text */
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Impact', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensures padding and border are inside the element height */
+}
+
+#restart-button:hover {
+    background-color: rgba(139, 0, 0, 0.8);
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Position elements */
+body {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+}
